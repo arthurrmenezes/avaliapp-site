@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Formulário App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="signup.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Cadastro</h1>
+        <a href="index.html" class="cta-button">Voltar</a>
+    </header>
+
+    <section id="signup">
+        <form id="signup-form">
+            <label for="role">Você é:</label>
+            <select id="role" required>
+                <option value="">Selecione...</option>
+                <option value="usuario">Usuário</option>
+                <option value="gestor">Gestor</option>
+            </select>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" required>
+
+            <label for="confirm-password">Confirmar Senha:</label>
+            <input type="password" id="confirm-password" required>
+
+            <button type="submit" class="cta-button">Cadastrar</button>
+            <p id="error-message" style="color: red;"></p>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Formulário App. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>
