@@ -17,6 +17,12 @@
 
     <section id="signup">
         <form id="signup-form">
+            <label for="full-name">Nome Completo:</label>
+            <input type="text" id="full-name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" required>
+
             <label for="role">Você é:</label>
             <select id="role" required>
                 <option value="">Selecione...</option>
@@ -24,14 +30,17 @@
                 <option value="gestor">Gestor</option>
             </select>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" required>
+            <label for="position">Cargo:</label>
+            <input type="text" id="position" required>
 
             <label for="password">Senha:</label>
             <input type="password" id="password" required>
 
             <label for="confirm-password">Confirmar Senha:</label>
             <input type="password" id="confirm-password" required>
+
+            <label for="hierarchy">Hierarquia (para quem responde):</label>
+            <input type="text" id="hierarchy" required>
 
             <button type="submit" class="cta-button">Cadastrar</button>
             <p id="error-message" style="color: red;"></p>
