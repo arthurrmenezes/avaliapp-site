@@ -20,7 +20,6 @@ const realtimeDB = getDatabase(firebaseApp);
 document.getElementById('signup-form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    // Obtendo valores dos campos
     const fullName = document.getElementById('full-name').value;
     const email = document.getElementById('email').value;
     const permission = document.getElementById('role').value; // Alterado para 'permission'
@@ -29,28 +28,24 @@ document.getElementById('signup-form').addEventListener('submit', function (even
     const confirmPassword = document.getElementById('confirm-password').value;
     const hierarchy = document.getElementById('hierarchy').value;
 
-    // Validação dos campos obrigatórios
     if (!fullName || !email || !permission || !position || !password || !confirmPassword || !hierarchy) {
         document.getElementById('error-message').textContent = "Todos os campos são obrigatórios!";
         return;
     }
 
-    // Verificando se as senhas coincidem
     if (password !== confirmPassword) {
         document.getElementById('error-message').textContent = "As senhas não são iguais!";
         return;
     }
 
-    // Criando usuário no Firebase
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
 
-            // Salvando dados do usuário no Realtime Database
             set(ref(realtimeDB, 'users/' + user.uid), {
                 fullName: fullName,
                 email: user.email,
-                permission: permission, // Alterado para 'permission'
+                permission: permission,
                 position: position,
                 hierarchy: hierarchy,
                 createdAt: new Date().toISOString()
