@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Formulário App</title>
+    <title>Cadastro e Login - Formulário App</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="signup.js"></script>
+    <script type="module" src="login.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Cadastro</h1>
+        <h1 id="form-title">Cadastro</h1>
         <a href="index.html" class="cta-button">Voltar</a>
     </header>
 
-    <section id="signup">
+    <!-- Seção de Cadastro -->
+    <section id="signup-section">
         <form id="signup-form">
             <div class="form-row">
                 <div class="form-group">
@@ -61,11 +63,52 @@
             <button type="submit" class="cta-button">Cadastrar</button>
             <p id="error-message" style="color: red;"></p>
         </form>
+        <p>Já tem uma conta? <a href="#" id="show-login">Fazer login</a></p>
+    </section>
+
+    <!-- Seção de Login -->
+    <section id="login-section" style="display: none;">
+        <form id="login-form">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Senha:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+            </div>
+
+            <button type="submit" class="cta-button">Login</button>
+            <p id="login-error-message" style="color: red;"></p>
+        </form>
+        <p>Não tem uma conta? <a href="#" id="show-signup">Criar conta</a></p>
+
+        <!-- Div adicional para exibir mensagens de login -->
+        <div id="login" style="margin-top: 20px;"></div>
     </section>
 
     <footer>
         <p>&copy; 2024 Formulário App. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        // Alternar entre as seções de cadastro e login
+        document.getElementById('show-login').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('signup-section').style.display = 'none';
+            document.getElementById('login-section').style.display = 'block';
+            document.getElementById('form-title').textContent = 'Login';
+        });
+
+        document.getElementById('show-signup').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('signup-section').style.display = 'block';
+            document.getElementById('login-section').style.display = 'none';
+            document.getElementById('form-title').textContent = 'Cadastro';
+        });
+    </script>
 </body>
 
 </html>
