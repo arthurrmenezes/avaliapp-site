@@ -22,13 +22,13 @@ document.getElementById('signup-form').addEventListener('submit', function (even
 
     const fullName = document.getElementById('full-name').value;
     const email = document.getElementById('email').value;
-    const permission = document.getElementById('role').value; // Alterado para 'permission'
-    const position = document.getElementById('position').value;
+    const permission = document.getElementById('role').value; 
+    const cargo = document.getElementById('position').value; 
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
     const hierarchy = document.getElementById('hierarchy').value;
 
-    if (!fullName || !email || !permission || !position || !password || !confirmPassword || !hierarchy) {
+    if (!fullName || !email || !permission || !cargo || !password || !confirmPassword || !hierarchy) {
         document.getElementById('error-message').textContent = "Todos os campos são obrigatórios!";
         return;
     }
@@ -46,7 +46,7 @@ document.getElementById('signup-form').addEventListener('submit', function (even
                 fullName: fullName,
                 email: user.email,
                 permission: permission,
-                position: position,
+                cargo: cargo,
                 hierarchy: hierarchy,
                 createdAt: new Date().toISOString()
             })

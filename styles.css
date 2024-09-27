@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Sanofi Sans';
+    src: url('fonts/SanofiSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -5,14 +12,14 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Sanofi Sans', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background: linear-gradient(135deg, #007BFF, #00D2FF);
+    background: linear-gradient(135deg, #7854bc, #7854bc);
     color: #fff;
     padding: 40px 20px;
     text-align: center;
@@ -97,11 +104,10 @@ ul li:last-child {
     border-bottom: none;
 }
 
-/* Estilo do footer */
 footer {
     padding: 20px;
     text-align: center;
-    background-color: #007BFF;
+    background-color: #7854bc;
     color: #fff;
 }
 
